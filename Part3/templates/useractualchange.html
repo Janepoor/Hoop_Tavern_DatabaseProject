@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<title>User change</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://www.walldevil.com/wallpapers/a75/wallpaper-background-black-basketball-basket-ball-sport-backgrounds-desktop-wallpapers.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+  
+    <h1 class="w3-jumbo w3-animate-top">Account info  {{uname}} </h1>
+      <p class="w3-large w3-center">{{message}}</p>
+
+
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+   
+    <p class="w3-large w3-center">
+        {% for n in data %}
+    <p  class="w3-large w3-center">username: {{n[0]}}</p>
+    <p  class="w3-large w3-center">password: {{n[1]}}</p>
+    <p class="w3-large w3-center">gender:  {{n[2]}}</p>
+    <p class="w3-large w3-center">emailaddress: {{n[3]}}</p>
+    <p class="w3-large w3-center">age: {{n[4]}}</p>
+    {% endfor %}
+    </p>
+
+
+   
+    
+   
+
+
+
+
+
+
+    <h1 class="w3-jumbo w3-animate-top">New account info</h1>
+    <h4> leave blank if do not want to change</h4>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+
+     <form method="POST" action="/useractualchange">
+      <label for="uname"></label>
+      <p class="w3-large w3-center"><input type="text" id="uname" name="uname" placeholder="Input new username"> <br></p>
+
+      <label for="password"></label>
+      <p class="w3-large w3-center"><input type="text" id= "password" name = "password" placeholder="Input new password" ><br></p>
+
+    
+      <label for="gender"></label>
+      <p class="w3-large w3-center"><input type="text" id="gender" name = "gender" placeholder="Input gender, M or F"><br></p>
+    
+      <label for="emailaddress"></label>
+      <p class="w3-large w3-center"><input type="text" id="emailaddress" name = "emailaddress" placeholder="Input new emailaddress"><br></p>
+
+
+      <label for="age"></label>
+      <p class="w3-large w3-center"><input type="text" id="age" name = "age" placeholder="Input new age"><br></p>
+      <input type="hidden" id="uid", name="uid" value="{{uid}}">
+      <p class="w3-large w3-center"><input type="submit" value="submit"></p>
+</form>
+ 
+
+
+
+
+  
+</div>
+
+</body>
+</html>
+ 
+
+
+
+
+
